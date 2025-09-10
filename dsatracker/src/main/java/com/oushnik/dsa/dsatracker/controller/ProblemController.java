@@ -18,6 +18,7 @@ import java.util.stream.Collectors;
 
 
 @RestController
+@CrossOrigin(origins = "*") // <-- Add this line to enable CORS for frontend requests
 @RequestMapping("/api/problems")
 public class ProblemController {
 

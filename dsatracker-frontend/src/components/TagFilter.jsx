@@ -12,8 +12,8 @@ function TagFilter({ onFilter }) {
   }, []);
 
   return (
-    <div className="mb-4">
-      <label className="mr-2 font-medium">Filter by tag:</label>
+    <div className="mb-4 flex items-center space-x-3">
+      <label className="font-medium text-gray-200">Filter by tag:</label>
       <select
         onChange={(e) => {
           const tag = e.target.value;
@@ -23,11 +23,13 @@ function TagFilter({ onFilter }) {
             getByTag(tag).then((res) => onFilter(res.data));
           }
         }}
-        className="border px-2 py-1 rounded"
+        className="bg-white/10 text-white px-3 py-1 rounded-lg border border-white/20 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-primary transition-all"
       >
         <option value="">All</option>
         {tags.map((tag) => (
-          <option key={tag} value={tag}>{tag}</option>
+          <option key={tag} value={tag}>
+            {tag}
+          </option>
         ))}
       </select>
     </div>
