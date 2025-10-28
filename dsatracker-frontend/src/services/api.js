@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'http://localhost:8080/api/problems';
+const BASE_URL = 'https://algo-smart-tracker-backend.onrender.com/api/problems';
 
 export const getAllProblems = () => axios.get(BASE_URL);
 export const addProblem = (data) => axios.post(BASE_URL, data);
